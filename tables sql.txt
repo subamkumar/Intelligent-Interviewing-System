@@ -1,0 +1,82 @@
+create table company
+(
+ cid number primary key,
+ cname varchar(30),
+ curl varchar(30),
+ cdescription varchar(500) 
+);
+
+create table interview
+(
+ iid number primary key,
+ ititle varchar(100),
+ idescription varchar(500),
+ ipaypackage varchar(20),
+ cid number references company(cid)
+);
+
+create table subject
+(
+ sid number primary key,
+ sname varchar(30),
+);
+
+create table scaling
+(
+ scid number primary key,
+ sid number references subject(sid),
+ iid number references interview(iid),
+ scale number
+);
+
+
+create table topic
+(
+ tid number primary key,
+ tname varchar(30),
+ trank number
+ sid number references subject(sid),
+);
+
+
+create table question
+(
+ qid number primary key,
+ qtext varchar(500),
+ qca number,
+ qrank number,
+ tid number references topic(tid)
+);
+
+create table qoption
+(
+ qoid number primary key,
+ qoption varchar(500),
+ qid number references question(qid) 
+);
+
+create table sys_user
+(
+ suid number primary key,
+ suname varchar(50),
+ suemail varchar(50) unique not null,
+ suphone varchar(20) unique not null
+);
+
+create table usr_login
+(
+ suid number primary key references sys_user(suid),
+ loginid varchar(30) unique not null,
+ loginpass varchar(30)
+);
+
+
+-------------------------------
+select * from 
+(
+	select your_columns, row_number() 
+	over (order by something unique) rn
+	from your_tables 
+)
+where rn between :n and :m 
+order by rn;

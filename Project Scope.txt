@@ -1,0 +1,108 @@
+User login
+User select for an Interview that fits the requirements of 1 to n companies
+User does the Self Scaling for n subjects
+Scaling average calcuated
+Comparison with companies scale criteria
+Decision to interview or not.
+On interview :
+Orderwise pick topic from n subjects
+Per topic generate questions subjectwise and then combinationwise
+
+Evaluator
+------------
+Evaluate answer
+Initiate Trace Behaviour
+
+Trace Behaviour
+====================== 
+timeAnalyzer()
+-----------------
+ fast sometimes
+   Half score
+   fastCounterUpdates
+ Less than Min Time answer
+   Zero score
+   fastCounterUpdates
+ On very slow answer
+   half score 
+   slowCounterUpdates
+ timeOut
+   timeOutCounterUpdates
+
+updateQuestionRank
+--------------------- 
+ N wrong answers for a topic
+  scale low
+  wrongAnswerCounterUpdates
+
+ N correct answers for a topic
+  scale high
+  correctAnswerCounterUpdates
+
+
+endTest
+-------------
+ Zero in N topics
+   FAILS     
+ N topics Gained
+   PASSES
+ userEnds
+   FAILS
+   NO SCORE
+
+changeTopic
+-------------
+  N wrong answers
+     Zero for this topic 
+ Cannot recover score in this topic
+   Score countable
+   Topic closes with fail status
+ Topic Prematurely gained
+   Score + 75% for remaining questions
+   topic closes with pass status
+ fast always
+   Zero for this topic 
+   Move to next topic
+   
+-----------------------------------------
+Result Calculation
+  Score + topics gained + time required combination
+  Offer companies
+
+
+
+====================================
+QuestionSetter
+Questions are divided into 3 ranks(1,2,3)
+There are 2 question sets
+1) Basic Set
+2) Moderate Set
+
+Basic Set has 2 portions
+Portion A : 1 Question of Rank1 and 2 Questions of Rank2
+Portion B : 1 Question of Rank2 and 2 Questions of Rank3
+
+Moderate Set has 2 portions
+Portion A : 3 Question of Rank2
+Portion B : 3 Question of Rank3
+
+PromotionDemotionRules 
+BasicSet:
+ Portion A is always asked full 
+  if Portion A score >= 60% 
+    then Portion B is asked
+  else
+    topic demotes
+ Portion B has evaluation after 2 answers
+ Score of Portion A is countable
+   If final score >= 60% then Topic Promotes
+ else
+   3 question of Portion B is asked
+ After the 3rd question evaluation is done
+   If final score >= 60% then Topic Promotes
+ else
+   topic demotes
+
+
+DemotionRules
+

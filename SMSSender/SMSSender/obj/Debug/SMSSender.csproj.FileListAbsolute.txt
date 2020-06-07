@@ -1,0 +1,9 @@
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\SMSSender\SMSSender\bin\Debug\SMSSender.exe
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\SMSSender\SMSSender\bin\Debug\SMSSender.pdb
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\SMSSender\SMSSender\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\SMSSender\SMSSender\obj\Debug\SMSSender.exe
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\SMSSender\SMSSender\obj\Debug\SMSSender.pdb
+C:\AJava\Project\SMSSender\SMSSender\obj\Debug\SMSSender.exe
+C:\AJava\Project\SMSSender\SMSSender\obj\Debug\SMSSender.pdb
+C:\AJava\Project\SMSSender\SMSSender\bin\Debug\SMSSender.exe
+C:\AJava\Project\SMSSender\SMSSender\bin\Debug\SMSSender.pdb
